@@ -13,4 +13,5 @@ public class AppConfiguration {
 	public static final String PERSON_OBJECT_NULL = "Person Object is null";
 	
 	public static final String NEGATIVE_CARD_BALANCE = "Card Balance cannot be negative";
+	public static final double DEFAULT_CARD_BALANCE = 100;
 }

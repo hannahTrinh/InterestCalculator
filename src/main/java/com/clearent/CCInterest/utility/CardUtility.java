@@ -9,10 +9,9 @@ import com.clearent.CCInterest.card.CreditCard;
 import com.clearent.CCInterest.card.Discover;
 import com.clearent.CCInterest.card.Master;
 import com.clearent.CCInterest.card.Visa;
+import com.clearent.CCInterest.configuration.AppConfiguration;
 
 public class CardUtility {
-
-	public static double DEFAULT_CARD_BALANCE = 100;
 	
 	/*
 	 * create and return a CreditCard object with default balance of $100 
@@ -21,7 +20,7 @@ public class CardUtility {
 	public static CreditCard createCard(Supplier<CreditCard> f) {
 		CreditCard c = f.get(); 
 		try {
-			c.setBalance(DEFAULT_CARD_BALANCE);
+			c.setBalance(AppConfiguration.DEFAULT_CARD_BALANCE);
 		}catch(Exception e) {
 			
 		}

@@ -73,10 +73,22 @@ public class CardInterestCalculatorTest {
 
 	/**************************** test caluclation logic *****************************************/
 	
-	@DisplayName("Test Interest for Visa Card balance 100 ")
+	@DisplayName("Test Interest for Visa Card balance 100 - pass in abstract class")
 	@Test
-	void testcalculateCardInterestVisa() {
+	void testcalculateCardInterestVisaASCC() {
 		CreditCard visa = CardUtility.createCard(Visa::new);
+        assertTrue( calculator.calculateCardInterest(visa) == AppConfiguration.VISA_INTEREST);
+	}
+	
+	@DisplayName("Test Interest for Visa Card balance 100 - pass in subclass")
+	@Test
+	void testcalculateCardInterestASVisa() {
+		Visa visa = new Visa();
+		try {
+			visa.setBalance(AppConfiguration.DEFAULT_CARD_BALANCE);
+		}catch(IncorrectBalanceException e) {
+			
+		}
         assertTrue( calculator.calculateCardInterest(visa) == AppConfiguration.VISA_INTEREST);
 	}
 	

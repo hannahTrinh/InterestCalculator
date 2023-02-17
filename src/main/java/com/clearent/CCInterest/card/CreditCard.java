@@ -10,7 +10,7 @@ import exception.IncorrectBalanceException;
  * Liskov Substitution Principle
  */
 public abstract class CreditCard {
-	private double balance = 0;
+	double balance = 0;
 	int interestRate;
 
 	public double getBalance() {
